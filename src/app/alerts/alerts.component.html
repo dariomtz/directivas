@@ -1,0 +1,7 @@
+<div *ngFor="let alert of alerts; let i = index" 
+    [ngClass]="'alert alert-' + alert.alert" 
+    (click)="add(i)" 
+    appAlertHover 
+    [defaultHoverColor]="alert.color ? alert.color: 'grey'">
+  {{alert.alert}} <span *ngIf="alert.count > 3">:  {{alert.count | numberToLetter}} </span> 
+</div>
